@@ -90,7 +90,7 @@ $ yarn dist
 
 
 ### MIT license
-Copyright (c) 2019 GolderBrother &lt;15234408101@163.com&gt;
+Copyright (c) 2019 GolderBrother &lt;1204788939@qq.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the &quot;Software&quot;), to deal
