@@ -4,15 +4,15 @@ import loadingSvg from '../assets/loading.svg';
 
 export function CardListSkeleton(props: ICardList) {
   let { column } = props;
-  let list = new Array(column || 6).fill(1);
+  let list: Array<any> = new Array(column || 6).fill(1);
   return (
     <>
       {
-        list.map((item: number, index: number) => {
+        list && Array.isArray(list) && list.map((item: number, index: number) => {
           return (
-            <div className="card-container" key={index}>
+            <div className="card-container" key={index + item}>
               <Card
-                key={index}
+                key={index + item}
                 loading={true}
                 className="movie-card"
                 cover={
@@ -34,11 +34,11 @@ export function CardListTop250Skeleton() {
   return (
     <div className="cards-box cards-box--top250 clearfix">
       {
-        list.map((item: number, index: number) => {
+        list && Array.isArray(list) && list.map((item: number, index: number) => {
           return (
-            <div className={["card-container", index === 0 ? "card-big" : ""].join(" ")} key={index}>
+            <div className={["card-container", index === 0 ? "card-big" : ""].join(" ")} key={index + item}>
               <Card
-                key={index}
+                key={index + item}
                 loading={true}
                 className="movie-card"
                 cover={
@@ -57,13 +57,13 @@ export function CardListTop250Skeleton() {
 
 export function ListSkeleton(props: IList) {
   let { row } = props;
-  let list = new Array(row || 4).fill(1);
+  let list:Array<any> = new Array(row || 4).fill(1);
   return (
     <>
       {
         list.map((item: number, index: number) => {
           return (
-            <li className="goodbox-rate" key={index}>
+            <li className="goodbox-rate" key={index + item}>
               <Skeleton className="title" paragraph={false} />
               <Skeleton className="summary" title={false} paragraph={{ rows: 1 }} />
               <span className="rank">0</span>

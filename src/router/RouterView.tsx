@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import routerMap from "./config";
 
 
-function CustomRoute(props: iRouterViewProps) {
+function CustomRoute(props: iRouterViewProps):any {
   let path: string = props.location.pathname;
 
   props.beforeEnter && props.beforeEnter(path);

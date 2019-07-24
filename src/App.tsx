@@ -56,7 +56,7 @@ function App() {
           <div className="win-side">
             <ul className="menu-list">
               {
-                menuList.map((item: string[], index: number) => {
+                menuList && Array.isArray(menuList) && menuList.map((item: string[], index: number) => {
                   return (
                     <li className="list-item" key={index}>
                       <Link to='/home' onClick={() => { scrollToAchorView(item[0]); setActiveIndex(index) }}>

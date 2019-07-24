@@ -6,11 +6,9 @@ export function serialize(data: any, isTraditional: boolean = false): string {
       if (data[key] != null) {
         let item = data[key];
         if (isTraditional && item instanceof Array) {
-          arr.push(item.map(function (field) {
-            return encodeURIComponent(key) + "=" + encodeURIComponent(field);
-          }).join("&"));
+          arr.push(item.map(field => `${encodeURIComponent(key)}=${encodeURIComponent(field)}`).join("&"));
         } else {
-          arr.push(encodeURIComponent(key) + "=" + encodeURIComponent(item));
+          arr.push(`${encodeURIComponent(key)}=${encodeURIComponent(item)}`);
         }
       }
     }

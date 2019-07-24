@@ -6,7 +6,7 @@ import { getContentBySearch, getHotShowing } from '../api';
 import { reSerialize } from '../utils';
 import '../css/Search.css';
 
-
+// hook一般使用在函数组件中
 export default function (props: iSearchProps) {
 
   let { location } = props;
@@ -16,8 +16,8 @@ export default function (props: iSearchProps) {
   let searchStr = query.q;
   let searchPageSize = 5;
   let [searchData, setSearchData] = useState<any>({});
-  let [hotShowList, setHotShowList] = useState([]);
-  let [isLoadingHotShow, setIsLoadingHotShow] = useState(true);
+  let [hotShowList, setHotShowList] = useState<Array<any>>([]);
+  let [isLoadingHotShow, setIsLoadingHotShow] = useState<boolean>(true);
 
 
   function changeSearchData(current: number) {
