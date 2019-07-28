@@ -73,9 +73,10 @@ body {
 
 .win-side {
   position: fixed;
-  width: var(--sideWidth);
   top: var(--headBarHeight);
   bottom: 0;
+  width: var(--sideWidth);
+  background-color: var(--backColor);
 }
 
 .page {

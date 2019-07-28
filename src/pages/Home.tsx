@@ -160,9 +160,9 @@ export default function() {
       <div className="page header flex-box" id="hash-top">
         <div className="header-banner">
           <Carousel autoplay>
-            {bannerList.map((item: any, index: number) => {
+            {bannerList && bannerList.map((item: any, index: number) => {
               return (
-                <div className="banner-item" key={index}>
+                <div className="banner-item" key={index + item}>
                   <img src={item} alt="banner" />
                 </div>
               );
@@ -232,7 +232,7 @@ export default function() {
               ) : (
                 newMovieList.map((item: any, index: number) => {
                   return (
-                    <div className="card-container" key={index}>
+                    <div className="card-container" key={index + item}>
                       <Card
                         className="movie-card"
                         hoverable
@@ -285,7 +285,7 @@ export default function() {
                     summary = summaryList.join(" / ");
 
                     return (
-                      <li className="goodbox-rate" key={index}>
+                      <li className="goodbox-rate" key={index + item}>
                         <Link to={`/detail/${id}`}>
                           <h3 className="title">{title}</h3>
                           <p

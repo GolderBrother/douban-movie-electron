@@ -111,8 +111,9 @@ app.on('ready', () => {
   let mainWindow = new BrowserWindow({
     width: 1160,
     height: 720,
-    minWidth: 1160,
-    minHeight: 720,
+    // minWidth: 1160,
+    // minHeight: 720, 
+    resizable: true,
     transparent: true,
     backgroundColor: "#99333333", // #<aarrggbb>
     titleBarStyle: "hiddenInset",

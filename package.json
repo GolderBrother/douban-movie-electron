@@ -6,6 +6,8 @@
   "homepage": ".",
   "author": "GolderBrother <1204788939@qq.com>",
   "license": "MIT",
+  "repository": "https://github.com/GolderBrother",
+  "description": "一个使用electron开发的豆瓣客户端",
   "dependencies": {
     "@types/lodash": "^4.14.136",
     "antd": "^3.16.3",
@@ -16,10 +18,13 @@
     "koa-static": "^5.0.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
+    "process-nextick-args": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-lazy-load": "^3.0.13",
-    "react-router-dom": "^5.0.0"
+    "react-perfect-scrollbar": "^1.5.3",
+    "react-router-dom": "^5.0.0",
+    "react-scrollbar": "^0.5.6"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
@@ -61,7 +66,7 @@
     "jest-resolve": "23.6.0",
     "jest-watch-typeahead": "^0.2.1",
     "mini-css-extract-plugin": "0.5.0",
-    "nodemon": "^1.18.10",
+    "nodemon": "^1.19.1",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.2.1",
     "postcss-flexbugs-fixes": "4.1.0",
