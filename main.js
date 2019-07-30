@@ -159,7 +159,9 @@ app.on('ready', () => {
       message: info,
     });
   });
-
+  
+  // 添加系统托盘功能
+  require("./src/main/tray.js")
 });
 
 app.on('before-quit', () => {

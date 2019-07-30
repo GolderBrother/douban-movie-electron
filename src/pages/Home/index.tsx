@@ -5,24 +5,24 @@ import {
   CardListTop250Skeleton,
   CardListSkeleton,
   ListSkeleton
-} from "../skeletons/Home";
+} from "../../skeletons/Home";
 import {
   getHotShowing,
   getNew,
   getGoodbox,
   getWeeklyMovie,
   getTop250
-} from "../api";
+} from "../../api";
 import * as _ from "lodash";
 import LazyLoad from "react-lazy-load";
-import "../css/Home.css";
+import "./index.scss";
 
 // temp banner
-import imgBanner001 from "../assets/banner-001.jpg";
-import imgBanner002 from "../assets/banner-002.jpg";
-import imgBanner003 from "../assets/banner-003.jpg";
-import imgBanner004 from "../assets/banner-004.jpg";
-import imgBanner005 from "../assets/banner-005.jpg";
+import imgBanner001 from "../../assets/banner-001.jpg";
+import imgBanner002 from "../../assets/banner-002.jpg";
+import imgBanner003 from "../../assets/banner-003.jpg";
+import imgBanner004 from "../../assets/banner-004.jpg";
+import imgBanner005 from "../../assets/banner-005.jpg";
 
 // 懒加载的图片高度
 const IMG_HEIGHT = 220;

@@ -116,7 +116,7 @@ built upon love by [docor](https://github.com/turingou/docor.git) v0.3.0
 
 **参考链接**
 - [Electron 文档](https://electronjs.org/docs/tutorial/application-distribution)
-
+- [搭建自己的React+Typescript环境（一）](https://www.cnblogs.com/ssw-men/p/11155699.html)
 
 TODO:
 1.样式css -> scss

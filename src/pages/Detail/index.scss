@@ -1,0 +1,229 @@
+@import url("../../style/variable.scss");
+// TODO: Error: Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (69)
+// For more information on which environments are supported pleas
+// https://github.com/jakearchibald/wittr/issues/20
+.profile {
+  position: relative;
+
+  &-img {
+    width: 200px;
+    box-shadow: 2px 2px 3px 0px #121111;
+  }
+
+  .block {
+    margin: 0 0 50px 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .tags {
+    margin: 10px 0;
+
+    .tag-text {
+      background-color: $backColor;
+      color: $foreColor;
+    }
+  }
+}
+
+.video_summary {
+  margin: 20px 0;
+
+  .ant-typography {
+    color: $foreColor;
+  }
+}
+
+
+.profile-rate {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  .rate {
+    color: $hoverColor;
+
+    .units {
+      font-size: 72px;
+    }
+
+    .decimal {
+      font-size: 54px;
+    }
+  }
+
+  .box {
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .title {
+    position: absolute;
+    top: 0;
+    right: 120px;
+    width: 10em;
+    font-size: 3rem;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+}
+
+.photos-box {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 200px;
+}
+
+.box-gallery {
+  width: 2000px;
+  height: 200px;
+}
+
+.gallery-img {
+  position: relative;
+  float: left;
+  height: 100%;
+  border-right: 5px solid #fff;
+
+  &:last-of-type {
+    border-right: none;
+  }
+
+  img {
+    width: auto;
+    height: 100%;
+  }
+
+  .img-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #fff;
+  }
+}
+
+
+.movie-card .img-tag,
+.gallery-img .img-tag {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.container-video {
+  padding: 0 10%;
+}
+
+.video-box {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  background-color: #27272f;
+
+  video {
+    width: 700px;
+    height: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.box-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(100% - 750px);
+  padding: 0 0 0 15px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .list {
+    .list-item {
+      cursor: pointer;
+
+      img {
+        width: 200px;
+        height: auto;
+      }
+
+      &.active .ant-list-item-meta-title,
+      &:hover .ant-list-item-meta-title {
+        color: $themeHoverColor;
+      }
+    }
+  }
+}
+
+
+.drawer-in {
+  top: 100%;
+  transition: top 1s ease;
+}
+
+.drawer-fixed-bottom {
+  position: fixed;
+  top: 460px;
+  /* The width of top drawer */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1001;
+  background-color: #FFF;
+  padding: 10px 10%;
+  overflow: auto;
+}
+
+.profile-img-loading {
+  width: 200px;
+  height: 280px;
+  background-color: #f5f6f7;
+  background-image: url("../assets/loading.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* custom ant style */
+
+.custom-ant-rate {
+  font-size: .7rem;
+  margin: 0 5px;
+}
+
+.cutsom-ant-comment {
+
+  .ant-comment-content-author-name>span,
+  .ant-comment-actions>li>span {
+    color: $foreColor;
+  }
+
+  .ant-comment-actions>li>span:hover {
+    color: $hoverColor;
+  }
+}
+
+/* reset ant style */
+
+.ant-drawer {
+  .ant-drawer-content {
+    background-color: $backColor;
+  }
+
+  .ant-list-vertical .ant-list-item-meta-title {
+    color: #fff;
+  }
+
+  .ant-drawer-close {
+    color: #fff;
+  }
+}

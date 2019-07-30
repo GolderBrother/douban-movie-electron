@@ -1,0 +1,35 @@
+@import url("../../style/variable.scss");
+.page-search {
+  position: relative;
+  margin: 30px auto;
+  .search-result-list {
+    width: 70%;
+    .item-img {
+        width: 160px;
+        height: 220px;
+        border-radius: 5px;
+        }
+    }
+    .ant-list-split .ant-list-item {
+        border: none;
+    }
+    .rate-box {
+        width: 30%;
+        .goodbox {
+            .goodbox-rate {
+                margin: 5px 10px;
+                padding: 5px 30px;
+                .title {
+                    font-size: .8rem;
+                }
+                .rank {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.ant-empty-description {
+  color: $foreColor;
+}

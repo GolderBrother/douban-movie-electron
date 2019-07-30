@@ -84,12 +84,12 @@ function App() {
             </ul>
           </div>
           <div className="win-main">
-            <PerfectScrollbar className="mian-box" ref={refMainBox}>
-              {/* <div className="mian-box" ref={refMainBox}> */}
-              <RouterView beforeEnter={routerBeforeEnterHook} />
-              {/* </div> */}
+            <PerfectScrollbar className="mian-box">
+              <div ref={refMainBox}>
+                <RouterView beforeEnter={routerBeforeEnterHook} />
+              </div>
             </PerfectScrollbar>
-          </PerfectScrollbar>
+          </div>
         </Router>
       </div>
     </LocaleProvider>

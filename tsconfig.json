@@ -17,7 +17,9 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "jsx": "preserve",
-    "isolatedModules": true,
+    // 将每个文件作为单独的模块（与“ts.transpileModule”类似）。
+    // https://www.cnblogs.com/zaihuilou/p/9556373.html
+    "isolatedModules": false,
     "experimentalDecorators":true
   },
   "include": [

@@ -61,7 +61,7 @@ export function ListSkeleton(props: IList) {
   return (
     <>
       {
-        list.map((item: number, index: number) => {
+        list && list.map((item: number, index: number) => {
           return (
             <li className="goodbox-rate" key={index + item}>
               <Skeleton className="title" paragraph={false} />
