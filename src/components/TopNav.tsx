@@ -4,7 +4,7 @@ import { Icon } from "antd";
 import { getHotShowing, getContentBySearch } from "../api";
 import * as _ from "lodash";
 import { serialize } from "../utils";
-import "../css/Home.css";
+import "../pages/Home/index.less";
 
 function TopNav(props: iTopNavProps) {
   let [hostShowTitle, setHostShowTitle] = useState<string>("");

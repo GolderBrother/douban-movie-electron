@@ -15,14 +15,15 @@ import {
 } from "../../api";
 import * as _ from "lodash";
 import LazyLoad from "react-lazy-load";
-import "./index.scss";
+// import "./index.less";
+import "../../_othercss/Home.css";
 
 // temp banner
-import imgBanner001 from "../../assets/banner-001.jpg";
-import imgBanner002 from "../../assets/banner-002.jpg";
-import imgBanner003 from "../../assets/banner-003.jpg";
-import imgBanner004 from "../../assets/banner-004.jpg";
-import imgBanner005 from "../../assets/banner-005.jpg";
+// import imgBanner001 from "../../assets/banner-001.jpg";
+// import imgBanner002 from "../../assets/banner-002.jpg";
+// import imgBanner003 from "../../assets/banner-003.jpg";
+// import imgBanner004 from "../../assets/banner-004.jpg";
+// import imgBanner005 from "../../assets/banner-005.jpg";
 
 // 懒加载的图片高度
 const IMG_HEIGHT = 220;
@@ -44,11 +45,11 @@ export default function() {
 
   // temp
   let bannerList = [
-    imgBanner001,
-    imgBanner002,
-    imgBanner003,
-    imgBanner004,
-    imgBanner005
+    require("../../assets/banner-001.jpg"),
+    require("../../assets/banner-002.jpg"),
+    require("../../assets/banner-003.jpg"),
+    require("../../assets/banner-004.jpg"),
+    require("../../assets/banner-005.jpg"),
   ];
 
   function getSearchHistory() {

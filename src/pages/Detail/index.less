@@ -1,9 +1,11 @@
-@import url("../../style/variable.scss");
+@import url("../../style/variable.less");
+
 // TODO: Error: Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (69)
 // For more information on which environments are supported pleas
 // https://github.com/jakearchibald/wittr/issues/20
 .profile {
   position: relative;
+  // color: @primary-color;
 
   &-img {
     width: 200px;
@@ -23,8 +25,8 @@
     margin: 10px 0;
 
     .tag-text {
-      background-color: $backColor;
-      color: $foreColor;
+      background-color: @backColor;
+      color: @foreColor;
     }
   }
 }
@@ -33,7 +35,7 @@
   margin: 20px 0;
 
   .ant-typography {
-    color: $foreColor;
+    color: @foreColor;
   }
 }
 
@@ -44,7 +46,7 @@
   right: 0;
 
   .rate {
-    color: $hoverColor;
+    color: @hoverColor;
 
     .units {
       font-size: 72px;
@@ -143,7 +145,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: calc(100% - 750px);
+  width: calc(~"100% - 750px");
   padding: 0 0 0 15px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -159,7 +161,7 @@
 
       &.active .ant-list-item-meta-title,
       &:hover .ant-list-item-meta-title {
-        color: $themeHoverColor;
+        color: @themeHoverColor;
       }
     }
   }
@@ -188,7 +190,7 @@
   width: 200px;
   height: 280px;
   background-color: #f5f6f7;
-  background-image: url("../assets/loading.svg");
+  background-image: url("../../assets/loading.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -204,11 +206,11 @@
 
   .ant-comment-content-author-name>span,
   .ant-comment-actions>li>span {
-    color: $foreColor;
+    color: @foreColor;
   }
 
   .ant-comment-actions>li>span:hover {
-    color: $hoverColor;
+    color: @hoverColor;
   }
 }
 
@@ -216,7 +218,7 @@
 
 .ant-drawer {
   .ant-drawer-content {
-    background-color: $backColor;
+    background-color: @backColor;
   }
 
   .ant-list-vertical .ant-list-item-meta-title {

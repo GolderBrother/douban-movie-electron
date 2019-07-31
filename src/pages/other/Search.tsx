@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { List, Pagination } from "antd";
-import { ListSkeleton } from "../skeletons/Home";
-import { getContentBySearch, getHotShowing } from "../api";
-import { reSerialize } from "../utils";
-import "../css/Search.css";
+import { ListSkeleton } from "../../skeletons/Home";
+import { getContentBySearch, getHotShowing } from "../../api";
+import { reSerialize } from "../../utils";
+import "../../css/Search.css";
 
 // hook一般使用在函数组件中
 export default function(props: iSearchProps) {

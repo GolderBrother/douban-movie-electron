@@ -19,7 +19,12 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import PageSkeleton from "../../skeletons/Detail";
 import { getDetail } from "../../api";
-import "./index.scss";
+
+// Error: Node Sass does not yet support your current environment: Windows 64-bit with Unsupported runtime (69)
+// For more information on which environments are supported please see:
+// https://github.com/sass/node-sass/releases/tag/v4.12.0
+import "./index.less";
+// import "../../css/Detail.css";
 const { ipcRenderer } = (window as any).electron;
 
 export default function(props: iDetailProps) {

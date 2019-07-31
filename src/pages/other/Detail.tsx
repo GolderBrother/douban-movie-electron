@@ -17,8 +17,8 @@ import moment from "moment";
 // https://www.npmjs.com/package/react-perfect-scrollbar
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
-import PageSkeleton from "../skeletons/Detail";
-import { getDetail } from "../api";
+import PageSkeleton from "../../skeletons/Detail";
+import { getDetail } from "../../api";
 import "../css/Detail.css";
 const { ipcRenderer } = (window as any).electron;
 

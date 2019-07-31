@@ -1,8 +1,6 @@
-import Home from '../pages/Home';
-// import Detail from '../pages/Detail';
-import Box from '../pages/Box';
-import Search from '../pages/Search';
-
+import Home from '../pages/Home/index';
+import Box from '../pages/Box/index';
+import Search from '../pages/Search/index';
 import Detail from '../pages/Detail/index';
 export default [
   {

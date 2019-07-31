@@ -5,14 +5,14 @@ import {
   CardListTop250Skeleton,
   CardListSkeleton,
   ListSkeleton
-} from "../skeletons/Home";
+} from "../../skeletons/Home";
 import {
   getHotShowing,
   getNew,
   getGoodbox,
   getWeeklyMovie,
   getTop250
-} from "../api";
+} from "../../api";
 import * as _ from "lodash";
 import LazyLoad from "react-lazy-load";
 import "../css/Home.css";

@@ -4,7 +4,7 @@ import { List, Pagination } from "antd";
 import { ListSkeleton } from "../../skeletons/Home";
 import { getContentBySearch, getHotShowing } from "../../api";
 import { reSerialize } from "../../utils";
-import "./index.scss";
+import "./index.less";
 
 // hook一般使用在函数组件中
 export default function(props: iSearchProps) {
@@ -19,6 +19,7 @@ export default function(props: iSearchProps) {
   let [isLoadingHotShow, setIsLoadingHotShow] = useState<boolean>(true);
 
   function changeSearchData(current: number) {
+    // TODO: 这个搜索功能有问题 404 Not Found
     getContentBySearch(searchStr, {
       count: searchPageSize,
       start: (current - 1) * searchPageSize

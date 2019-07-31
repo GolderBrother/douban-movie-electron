@@ -44,7 +44,7 @@
   top: var(--headBarHeight);
   left: var(--sideWidth);
   right: 0;
-  bottom: 0;
+  bottom: 5px;
   overflow: auto;
 }
 
