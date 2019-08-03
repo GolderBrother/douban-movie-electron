@@ -43,7 +43,7 @@ function openWeb(url) {
   shell.openExternal(url);
 }
 
-// 当前窗口渲染网页
+// 当前窗口渲染网页 没有效果
 function openWebView(url){
   // 获取当前窗口Id
   const win = BrowserWindow.getFocusedWindow();
