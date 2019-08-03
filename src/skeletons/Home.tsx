@@ -2,13 +2,13 @@
  * @Description: 首页骨架屏组件 
  * @Author: james.zhang 
  * @Date: 2019-07-31 22:44:01 
- * @Last Modified by: james.zhang 
- * @Last Modified time: 2019-07-31 22:44:01 
+ * @Last Modified by: james.zhang
+ * @Last Modified time: 2019-08-03 13:39:16
  */
 
 import React from 'react';
 import { Card, Skeleton } from 'antd';
-import loadingSvg from '../assets/loading.svg';
+import loadingSvg from 'assets/loading.svg';
 
 export function CardListSkeleton(props: ICardList) {
   let { column } = props;

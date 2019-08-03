@@ -117,6 +117,9 @@ built upon love by [docor](https://github.com/turingou/docor.git) v0.3.0
 **参考链接**
 - [Electron 文档](https://electronjs.org/docs/tutorial/application-distribution)
 - [搭建自己的React+Typescript环境（一）](https://www.cnblogs.com/ssw-men/p/11155699.html)
+- [Typescript相关坑与解决办法](https://www.imooc.com/article/47192)
+- [一次解决React+TypeScript+Webpack 别名（alias）找不到问题的过程](https://blog.csdn.net/weixin_33698043/article/details/89663221)
+- [React + Electron 搭建一个桌面应用](https://juejin.im/post/5a6a91276fb9a01cbd58ce32#heading-14)
 
 TODO:
 1.样式css -> scss

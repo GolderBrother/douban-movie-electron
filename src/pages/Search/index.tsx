@@ -19,12 +19,13 @@ export default function(props: iSearchProps) {
   let [isLoadingHotShow, setIsLoadingHotShow] = useState<boolean>(true);
 
   function changeSearchData(current: number) {
-    // TODO: 这个搜索功能有问题 404 Not Found
+    // TODO: 这个搜索功能有问题 豆瓣电影接口 search 报错 404 Not Found
     getContentBySearch(searchStr, {
       count: searchPageSize,
       start: (current - 1) * searchPageSize
-    }).then(({ data }: AxiosResponse) => {
-      setSearchData(data);
+    }).then((res: AxiosResponse) => {
+      if (!res) return;
+      setSearchData(res.data);
     });
   }
 
@@ -35,9 +36,9 @@ export default function(props: iSearchProps) {
     getHotShowing({
       start: 0,
       count: 12
-    }).then(({ data }: AxiosResponse) => {
-      let { subjects } = data;
-
+    }).then((res: AxiosResponse) => {
+      if (!res) return;
+      let { subjects = "" } = res.data || {};
       setHotShowList(subjects);
       setIsLoadingHotShow(false);
     });

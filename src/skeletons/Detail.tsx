@@ -2,8 +2,8 @@
  * @Description: 详情页骨架屏组件 
  * @Author: james.zhang 
  * @Date: 2019-07-31 22:44:25 
- * @Last Modified by: james.zhang 
- * @Last Modified time: 2019-07-31 22:44:25 
+ * @Last Modified by: james.zhang
+ * @Last Modified time: 2019-08-03 11:51:45
  */
 
 import React from 'react';

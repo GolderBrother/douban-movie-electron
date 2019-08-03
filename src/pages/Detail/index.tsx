@@ -15,8 +15,8 @@ import moment from "moment";
 // https://www.npmjs.com/package/react-scrollbar 报错，暂时不用！！！
 // const ScrollArea = require("react-scrollbar");
 // https://www.npmjs.com/package/react-perfect-scrollbar
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import 'react-perfect-scrollbar/dist/css/styles.css';
+import PerfectScrollbar from "react-perfect-scrollbar";
+import "react-perfect-scrollbar/dist/css/styles.css";
 import PageSkeleton from "../../skeletons/Detail";
 import { getDetail } from "../../api";
 
@@ -69,9 +69,11 @@ export default function(props: iDetailProps) {
   }
 
   useEffect(() => {
-    getDetail(params.id).then(({ data }: AxiosResponse) => {
+    getDetail(params.id).then((res: AxiosResponse) => {
       // 处理下数据
-      let average = data.rating.average;
+      if (!res) return;
+      let data = res.data || {};
+      let average = data.rating && data.rating.average;
       let [$units, $decimal] = ("" + average).split(".");
 
       data.$units = $units || 0;

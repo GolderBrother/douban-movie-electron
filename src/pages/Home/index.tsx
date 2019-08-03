@@ -15,15 +15,8 @@ import {
 } from "../../api";
 import * as _ from "lodash";
 import LazyLoad from "react-lazy-load";
-// import "./index.less";
-import "../../_othercss/Home.css";
-
-// temp banner
-// import imgBanner001 from "../../assets/banner-001.jpg";
-// import imgBanner002 from "../../assets/banner-002.jpg";
-// import imgBanner003 from "../../assets/banner-003.jpg";
-// import imgBanner004 from "../../assets/banner-004.jpg";
-// import imgBanner005 from "../../assets/banner-005.jpg";
+import "./index.less";
+// import "src/_othercss/Home.css";
 
 // 懒加载的图片高度
 const IMG_HEIGHT = 220;
@@ -43,13 +36,13 @@ export default function() {
   let [isLoadingTop250, setIsLoadingTop250] = useState(true);
   let [searchHistory] = useState(getSearchHistory().slice(0));
 
-  // temp
+  // temp banner img
   let bannerList = [
-    require("../../assets/banner-001.jpg"),
-    require("../../assets/banner-002.jpg"),
-    require("../../assets/banner-003.jpg"),
-    require("../../assets/banner-004.jpg"),
-    require("../../assets/banner-005.jpg"),
+    require("assets/banner-001.jpg"),
+    require("assets/banner-002.jpg"),
+    require("assets/banner-003.jpg"),
+    require("assets/banner-004.jpg"),
+    require("assets/banner-005.jpg")
   ];
 
   function getSearchHistory() {
@@ -118,15 +111,17 @@ export default function() {
     getHotShowing({
       start: 0,
       count: 12
-    }).then(({ data }: AxiosResponse) => {
-      let { subjects } = data;
+    }).then((res: AxiosResponse) => {
+      if (!res) return;
+      let { subjects = "" } = res.data || {};
 
       setHotShowList(subjects);
       setIsLoadingHotShow(false);
     });
 
-    getNew().then(({ data }: AxiosResponse) => {
-      let { subjects } = data;
+    getNew().then((res: AxiosResponse) => {
+      if (!res) return;
+      let { subjects = "" } = res.data || {};
 
       setNewMovieList(subjects);
       setIsLoadingNewMovie(false);
@@ -134,16 +129,17 @@ export default function() {
 
     getGoodbox({
       count: 10
-    }).then(({ data }: AxiosResponse) => {
-      let { subjects, date } = data;
-
+    }).then((res: AxiosResponse) => {
+      if (!res) return;
+      let { subjects = "", date = "" } = res.data || {};
       setBoxLastDate(date);
       setGoodBoxList(subjects);
       setIsLoadingGoodBox(false);
     });
 
-    getWeeklyMovie().then(({ data }: AxiosResponse) => {
-      let { subjects } = data;
+    getWeeklyMovie().then((res: AxiosResponse) => {
+      if (!res) return;
+      let { subjects = "" } = res.data || {};
 
       setWeeklyBox(subjects);
       setIsLoadingWeeklyBox(false);
@@ -151,8 +147,9 @@ export default function() {
 
     getTop250({
       count: 36
-    }).then(({ data }: AxiosResponse) => {
-      let { subjects } = data;
+    }).then((res: AxiosResponse) => {
+      if (!res) return;
+      let { subjects = "" } = res.data || {};
 
       setTop250List(subjects);
       setIsLoadingTop250(false);

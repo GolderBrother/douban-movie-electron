@@ -14,7 +14,7 @@ import TopNav from "./components/TopNav";
 
 moment.locale("zh-cn");
 
-const menuList = [
+const menuList:Array<Array<string>> = [
   ["#hash-top", "推荐"],
   ["#hash-hotshow", "正在热映"],
   ["#hash-newmovie", "新片榜"],
@@ -45,6 +45,10 @@ function App() {
     const parent = refMainBox.current;
     if (parent === void 0) return;
     const target = parent.querySelector(selector);
+    // 类似锚标记跳转
+    // 调用方法为 element.scrollIntoView() 参数默认为true。
+    // 参数为true时调用该函数，页面（或容器）发生滚动，使element的顶部与视图（容器）顶部对齐；
+    // 参数为false时，使element的底部与视图（容器）底部对齐。TIPS：页面（容器）可滚动时才有用！
     target && target.scrollIntoView();
   }
 

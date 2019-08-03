@@ -4,7 +4,7 @@ import { Icon } from "antd";
 import { getHotShowing, getContentBySearch } from "../api";
 import * as _ from "lodash";
 import { serialize } from "../utils";
-import "../pages/Home/index.less";
+import "pages/Home/index.less";
 
 function TopNav(props: iTopNavProps) {
   let [hostShowTitle, setHostShowTitle] = useState<string>("");
@@ -46,7 +46,8 @@ function TopNav(props: iTopNavProps) {
     let cache = getSearchHistory().slice(0);
 
     let isExist = cache.some((c: iSearchHistory) => c.id === item.id);
-
+    setSearchStr(item.title);
+    setIsShowSuggestBox(false);
     if (!isExist) {
       cache.unshift(item);
       if (cache.length > MAX_LEN_CACHE_SEARCH) {
@@ -61,8 +62,9 @@ function TopNav(props: iTopNavProps) {
     return _.debounce(function(value) {
       getContentBySearch(value, {
         count: 5
-      }).then(({ data }: AxiosResponse) => {
-        let { subjects } = data;
+      }).then((res: AxiosResponse) => {
+        if (!res) return;
+        let { subjects = "" } = res.data || {};
         setSuggestList(subjects);
       });
     }, 5e2);
@@ -124,6 +126,7 @@ function TopNav(props: iTopNavProps) {
                   display: isShowSuggestBox ? "block" : "none"
                 }}
                 onClick={ev => {
+                  // react 阻止事件冒泡
                   ev.nativeEvent.stopImmediatePropagation();
                 }}
               >
@@ -154,26 +157,27 @@ function TopNav(props: iTopNavProps) {
                     <div className="list-hot">
                       <h4 className="panel-title">热映</h4>
                       <ul>
-                        {hotShowList
-                          .slice(0, 8)
-                          .map((item: any, index: number) => {
-                            return (
-                              <li className="list-item" key={index}>
-                                <Link
-                                  to={`/detail/${item.id}`}
-                                  onClick={(ev: any) => {
-                                    addSearchHistory({
-                                      id: item.id,
-                                      title: item.title
-                                    });
-                                  }}
-                                >
-                                  <span className="index">{+index + 1}</span>
-                                  <span className="title">{item.title}</span>
-                                </Link>
-                              </li>
-                            );
-                          })}
+                        {hotShowList &&
+                          hotShowList
+                            .slice(0, 8)
+                            .map((item: any, index: number) => {
+                              return (
+                                <li className="list-item" key={index}>
+                                  <Link
+                                    to={`/detail/${item.id}`}
+                                    onClick={(ev: any) => {
+                                      addSearchHistory({
+                                        id: item.id,
+                                        title: item.title
+                                      });
+                                    }}
+                                  >
+                                    <span className="index">{+index + 1}</span>
+                                    <span className="title">{item.title}</span>
+                                  </Link>
+                                </li>
+                              );
+                            })}
                       </ul>
                     </div>
                   </div>
@@ -219,10 +223,12 @@ function TopNav(props: iTopNavProps) {
     getHotShowing({
       start: 0,
       count: 12
-    }).then(({ data }: AxiosResponse) => {
-      let { subjects } = data;
+    }).then((res: AxiosResponse) => {
+      if (!res) return;
+      let { subjects = "" } = res.data || {};
 
-      let title = subjects.length > 0 ? subjects[0].title : "";
+      let title =
+        Array.isArray(subjects) && subjects.length > 0 ? subjects[0].title : "";
 
       setHostShowTitle(title);
       setHotShowList(subjects);

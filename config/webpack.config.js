@@ -42,6 +42,8 @@ const lessModuleRegex = /\.module\.less$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
+const resolveDir = dir => path.join(__dirname, '..', dir);
+
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function(webpackEnv) {
@@ -260,13 +262,24 @@ module.exports = function(webpackEnv) {
       // https://github.com/facebook/create-react-app/issues/290
       // `web` extension prefixes have been added for better support
       // for React Native Web.
-      extensions: paths.moduleFileExtensions
-        .map(ext => `.${ext}`)
-        .filter(ext => useTypeScript || !ext.includes('ts')),
+      // extensions: paths.moduleFileExtensions
+      //   .map(ext => `.${ext}`)
+      //   .filter(ext => useTypeScript || !ext.includes('ts')),
+      extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       alias: {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+
+        // 配置路径别名映射 没有效果！！！ webpack报错：TypeScript error: Cannot find module
+        'src': resolveDir('src'),
+        'api': resolveDir('src/api'),
+        // 'utils': resolveDir('src/utils'),
+        'utils': path.resolve(__dirname, '../src/utils'),
+        'assets': resolveDir('src/assets'),
+        'pages': resolveDir('src/pages'),
+        'components': resolveDir('src/components'),
+        'skeletons': resolveDir('src/skeletons'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
