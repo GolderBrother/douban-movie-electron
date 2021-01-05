@@ -11,7 +11,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.136",
     "antd": "^3.20.7",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
     "koa-server-http-proxy": "^0.1.0",
